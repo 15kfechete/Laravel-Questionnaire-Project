@@ -1,7 +1,22 @@
-@extends('layouts.master')
-
-@section('title', 'My Home Page')
+@extends('layouts.app')
 
 @section('content')
-    <p>I AM A LARAVEL BLADE STAR.</p>
+
+<div class="card">
+                    <div class="card-divider">
+                        Dashboard
+                    </div>
+                    <div class="card-section">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    You are logged in!
+
+                    <a href="/questionnaires" class="button">Create New Questionnaire</a>
+                    </div>
+                </div>
+
 @endsection

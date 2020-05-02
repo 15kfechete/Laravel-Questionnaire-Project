@@ -4,9 +4,9 @@ $I = new FunctionalTester($scenario);
 $I->am('a admin');
 $I->wantTo('test laravel working');
 
-$I->amOnPage('/');
+$I->amOnPage('/home');
 
-$I->seeCurrentUrlEquals('/');
+$I->seeCurrentUrlEquals('/home');
 $I->sees('Laravel', '.title');
 
 

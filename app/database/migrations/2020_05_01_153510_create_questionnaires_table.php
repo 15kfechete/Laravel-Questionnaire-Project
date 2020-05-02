@@ -17,8 +17,7 @@ class CreateQuestionnairesTable extends Migration
             $table->bigIncrements('questionnaireID');
             $table->unsignedBigInteger('researcherID');
             $table->string('questionnaireTitle');
-            $table->date_create('createdOn');
-            $table->date_date_set('deadlineOn');
+            $table->date('createdOn');
             $table->string('agreementTerms');
             $table->timestamps();
         });
