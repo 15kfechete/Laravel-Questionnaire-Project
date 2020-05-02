@@ -15,6 +15,10 @@ class CreateResponsesTable extends Migration
     {
         Schema::create('responses', function (Blueprint $table) {
             $table->bigIncrements('responseID');
+            $table->bigIncrements('answerID');
+            $table->bigIncrements('questionnaireID');
+
+
             $table->timestamps();
         });
     }

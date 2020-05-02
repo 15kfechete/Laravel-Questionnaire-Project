@@ -16,13 +16,10 @@ class CreateQuestionnairesTable extends Migration
         Schema::create('questionnaires', function (Blueprint $table) {
             $table->bigIncrements('questionnaireID');
             $table->unsignedBigInteger('researcherID');
-            $table->string('questionnaireID');
+            $table->string('questionnaireTitle');
             $table->date_create('createdOn');
             $table->date_date_set('deadlineOn');
             $table->string('agreementTerms');
-
-
-
             $table->timestamps();
         });
     }

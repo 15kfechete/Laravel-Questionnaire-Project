@@ -15,14 +15,9 @@ class CreateResearchersTable extends Migration
     {
         Schema::create('researchers', function (Blueprint $table) {
             $table->bigIncrements('researcherID');
-            $table->string('username');
-            $table->string('password');
             $table->string('name');
+            $table->string('email')->unique();
             $table->string('password');
-
-
-
-
             $table->timestamps();
         });
     }
