@@ -6,8 +6,11 @@
 
 actor: AcceptanceTester
 modules:
-    enabled:
-        - PhpBrowser:
-            url: http://localhost/myapp
-        - \Helper\Acceptance
-    step_decorators: ~        
+  enabled:
+    - PhpBrowser:
+        url: http://localhost:8000
+    - \Helper\Acceptance
+    - Laravel5
+    - Db
+
+  step_decorators: ~
