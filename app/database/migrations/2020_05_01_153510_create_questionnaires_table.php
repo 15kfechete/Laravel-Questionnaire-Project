@@ -14,10 +14,9 @@ class CreateQuestionnairesTable extends Migration
     public function up()
     {
         Schema::create('questionnaires', function (Blueprint $table) {
-            $table->bigIncrements('questionnaireID');
-            $table->unsignedBigInteger('researcherID');
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('user_id');
             $table->string('questionnaireTitle');
-            $table->date('createdOn');
             $table->string('agreementTerms');
             $table->timestamps();
         });
