@@ -46,8 +46,6 @@
                 </label>
             </div>
 
-
-
             <div class="medium-6 cell">
                 <button type="submit" class="button">
                 Register
