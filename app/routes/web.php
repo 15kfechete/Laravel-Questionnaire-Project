@@ -15,19 +15,10 @@ Route::get('/', function () {
     return view('home');
 });
 
-// about page (app/resources/views/skills.blade.php)
-Route::get('quesstionnaires', function()
-{
-    return view('quesstionnaires');
-});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
+Route::get('/questionnaires/create', 'QuestionnaireController@create');
 
-Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

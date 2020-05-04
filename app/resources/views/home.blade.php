@@ -15,7 +15,7 @@
 
                     You are logged in!
 
-                    <a href="/questionnaires" class="button">Create New Questionnaire</a>
+                    <a href="/questionnaires/create" class="button">Create New Questionnaire</a>
                     </div>
                 </div>
 
