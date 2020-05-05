@@ -10,7 +10,8 @@ modules:
     - PhpBrowser:
         url: http://localhost:8000
     - \Helper\Acceptance
-    - Laravel5
+    - Laravel5:
+        part: ORM
     - Db
 
   step_decorators: ~
