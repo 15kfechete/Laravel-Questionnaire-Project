@@ -9,8 +9,8 @@
                     <div class="card-section">
 
                     {{ $questionnaire->agreementTerms}}
-                    {{ $questionnaire->onDate}}
 
+                    <a href="/questionnaires/{{ $questionnaire->id}}/questions/create" class="button">Create New Question</a>
 
                    
                     </div>
