@@ -22,6 +22,7 @@ class QuestionnaireController extends Controller
             'questionnaireTitle' => 'required',
 
             'agreementTerms' => 'required',
+            
         ]);
     
         $questionnaire = auth()->user()->questionnaire()->create($data);

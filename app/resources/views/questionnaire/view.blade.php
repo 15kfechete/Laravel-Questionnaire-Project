@@ -9,6 +9,8 @@
                     <div class="card-section">
 
                     {{ $questionnaire->agreementTerms}}
+                    {{ $questionnaire->onDate}}
+
 
                    
                     </div>
