@@ -10,6 +10,11 @@
 
                     @foreach($questionnaire->questions as $key => $question)
                         <div class="card-divider">
+
+                        @error('responses.' . $key . '.answer_id')
+                        <p>{{ $message}} </p>
+                        @enderror
+
                         {{ $key + 1}} {{ $question->question}}
                         </div>
                             <div class="card-section">
@@ -21,6 +26,8 @@
                                     <li>
                                         <input type="radio" name="responses[{{ $key }}][answer_id]" id="answer{{ $answer->id}}" value="{{ $answer->id }}">
                                         {{ $answer->answer}}
+
+                                        <input type="hidden" name="responses[{{ $key }}][question_id]" value="{{ $question->id }}">
                                     </li>
                                 @endforeach
                                 </label>
@@ -29,7 +36,7 @@
                             </div>
                     @endforeach
 
-                    <a href="/questionnaires/create" class="button">Finnish Survey</a>
+                    <a class="button">Finnish Survey</a>
 
                     
                     </form>
