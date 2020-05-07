@@ -17,6 +17,6 @@
 
                     <a href="/questionnaires/create" class="button">Create New Questionnaire</a>
                     </div>
-                </div>
+</div>
 
 @endsection

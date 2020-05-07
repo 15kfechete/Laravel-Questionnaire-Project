@@ -37,5 +37,6 @@ class QuestionnaireController extends Controller
         $questionnaire->load('questions.answers');
 
         return view('questionnaire.view', compact('questionnaire'));
+        
     }
 }

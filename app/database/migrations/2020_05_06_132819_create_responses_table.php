@@ -15,6 +15,10 @@ class CreateResponsesTable extends Migration
     {
         Schema::create('responses', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('survey_id');
+            $table->unsignedBigInteger('question_id');
+            $table->unsignedBigInteger('answer_id');
+
             $table->timestamps();
         });
     }

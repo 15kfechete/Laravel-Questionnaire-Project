@@ -16,19 +16,25 @@
 
 
             @foreach($questionnaire->questions as $question)
+            <div class="card">
+
                 <div class="card-divider">
                     {{ $question->question }}
                 </div>
 
                 <div class="card-section">
                     
+                <ul class="vertical menu">
                         @foreach($question->answers as $answer)
-                        <ul class="vertical menu">
                         <li>{{ $answer->answer }}</li>
-                        </ul>
-
                         @endforeach
+                </ul>
+
                 </div>
-            @endforeach                    
+            </div>
+
+            @endforeach           
+
+         
 </div>
 @endsection
