@@ -12,4 +12,9 @@ class answer extends Model
     {
         return $this->belongsTo(question::class);
     }
+
+    public function responses()
+    {
+        return $this->hasMany(response::class);
+    }
 }

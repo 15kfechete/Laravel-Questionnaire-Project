@@ -23,16 +23,26 @@
                 </div>
 
                 <div class="card-section">
-                    
-                <ul class="vertical menu">
-                        @foreach($question->answers as $answer)
-                        <li>{{ $answer->answer }}</li>
-                        @endforeach
-                </ul>
-
+                    <ul class="vertical menu">
+                            @foreach($question->answers as $answer)
+                                <li>
+                                        <div class="medium-6 cell">{{ $answer->answer }}</div>
+                                    @if($question->responses->count())
+                                        <div class="medium-6 cell">{{ intval(($answer->responses->count() * 100) / $question->responses->count()) }}</div>
+                                    @endif
+                                </li>
+                            @endforeach
+                    </ul>
                 </div>
-            </div>
+                    <div class="medium-6 cell">
+                            <form action="/questionnaires/{{ $questionnaire->id }}/questions/{{ $question->id }}" method="post">
+                                @method('DELETE')
+                                @csrf
 
+                                <button type="submit" class="button">Delete Question</button>
+                            </form>
+                    </div>
+            </div>
             @endforeach           
 
          
