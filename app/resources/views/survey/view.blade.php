@@ -31,11 +31,27 @@
                          </div>
                     </div>
                     @endforeach
+                    <div class="card">
+                        <div class="card-divider">
+                            Confirmation
+                        </div>
+                            <div class="card-section">
+                                <ul class="vertical menu">
+                                    <label for="identification">
+                                        <li>
+                                            <input type="integer" name="survey[identification]" id="identification">
+                                        </li>
+                                    </label>
 
-                    <div class="medium-6 cell">
-                        <button class="button" type="submit">Create Questionnaire</button>
+                                    @error('identification')
+                                        <p>{{ $message }} </p>
+                                    @enderror
+                                <div class="medium-6 cell">
+                                    <button class="button" type="submit">Create Questionnaire</button>
+                                </div>
+                            </div>
                     </div>
-                    
+
                 </form>
 
 @endsection
