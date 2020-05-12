@@ -17,7 +17,7 @@ class CreateQuestionnairesTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->string('questionnaireTitle');
-            $table->string('agreementTerms');
+            $table->longText('agreementTerms');
             $table->timestamps();
         });
     }

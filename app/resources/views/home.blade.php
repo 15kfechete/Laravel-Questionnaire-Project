@@ -17,25 +17,55 @@
             </div>
     </div>
 
+            @foreach($questionnaires as $questionnaire)
     <div class="card">
         <div class="card-divider">
-            My Questionnaires
+            {{ $questionnaire->questionnaireTitle }}
         </div>
             <div class="card-section">
-                <ul class="vertical menu">
-                    @foreach($questionnaires as $questionnaire)
-                        <li>
-                            <a href="{{ $questionnaire->path() }}">{{ $questionnaire->questionnaireTitle }}</a>
-                        </li>
 
-                        <div>
-                            Public
-                            <p>
-                                <a href="{{ $questionnaire->path() }}" class="button">{{ $questionnaire->path() }}}</a>
-                            </p>
-                        </div>
-                    @endforeach
-                </ul>
+            <div class="grid-x">
+                <div class="cell small-12">
+                    <p>{{ $questionnaire->agreementTerms }}</P>
+                </div>
+            </div>
+
+            <div class="grid-x">
+                <div class="cell small-2">
+                    <h3>Private</h3>
+                </div>
+                <div class="cell small-8">
+                    <h3>Public</h3>
+                </div>
+                <div class="cell small-2">
+                    <form action="/questionnaires/{{ $questionnaire->id }}" method="post">
+                        @method('DELETE')
+                        @csrf
+                        <button type="submit" class="alert button">Delete Questionnaire</button>
+                    </form>
+                </div>
+            </div>
+            <div class="grid-x">
+                <div class="cell small-2">
+                    <a href="{{ $questionnaire->path() }}"><h3>{{ $questionnaire->questionnaireTitle }}</h3></a>
+                </div>
+                <div class="cell small-8">
+                    <a href="{{ $questionnaire->publicPath() }}" class="button">{{ $questionnaire->publicPath() }}}</a>
+                </div>
+                <div class="cell small-2">
+                    <form action="" method="post">
+                        @method('PATCH')
+                        @csrf
+                        <button type="submit" class="success button">Edit Questionnaire</button>
+                    </form>
+                </div>
+            </div>
+
+
+            
+                
+
             </div>
     </div>
+            @endforeach
 @endsection

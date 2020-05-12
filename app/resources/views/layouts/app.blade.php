@@ -23,7 +23,7 @@
 
 <body>
 <div id="app">
-    <div class="grid-container">
+    <div class="grid-container full">
         <div class="grid-x grid-margin-x">
             <div class="small-12 cell">
                 <div class="top-bar">
@@ -66,7 +66,9 @@
             </div>
         </div>
         <div class="grid-x grid-padding-y">
-            <div class="cell small-12">
+        <div class="cell small-2">
+        </div>
+            <div class="cell small-8">
                 @yield('content')
             </div>
         </div>
