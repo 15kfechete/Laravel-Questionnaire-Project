@@ -23,7 +23,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/questionnaires/create', 'QuestionnaireController@create');
 Route::post('/questionnaires', 'QuestionnaireController@store');
 Route::get('/questionnaires/{questionnaire}', 'QuestionnaireController@show');
-Route::delete('/questionnaires/{questionnaire}', 'QuestionController@destroy');
+Route::delete('/questionnaires/{questionnaire}', 'QuestionnaireController@destroy');
 
 Route::get('/questionnaires/{questionnaire}/edit', 'QuestionnaireController@edit');
 Route::patch('/questionnaires/{questionnaire}', 'QuestionnaireController@edit');
