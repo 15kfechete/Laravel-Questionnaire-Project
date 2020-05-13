@@ -26,11 +26,14 @@ Route::get('/questionnaires/{questionnaire}', 'QuestionnaireController@show');
 Route::delete('/questionnaires/{questionnaire}', 'QuestionnaireController@destroy');
 
 Route::get('/questionnaires/{questionnaire}/edit', 'QuestionnaireController@edit');
-Route::patch('/questionnaires/{questionnaire}', 'QuestionnaireController@edit');
+Route::patch('/questionnaires/{questionnaire}', 'QuestionnaireController@update');
 
 Route::get('/questionnaires/{questionnaire}/questions/create', 'QuestionController@create');
 Route::post('/questionnaires/{questionnaire}/questions', 'QuestionController@store');
 Route::delete('/questionnaires/{questionnaire}/questions/{question}', 'QuestionController@destroy');
+
+Route::get('/questionnaires/{questionnaire}/questions/{question}/edit', 'QuestionController@edit');
+Route::patch('/questionnaires/{questionnaire}/questions/{question}', 'QuestionController@update');
 
 
 Route::get('/surveys/{questionnaire}-{slug}', 'SurveyController@show');

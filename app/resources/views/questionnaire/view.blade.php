@@ -11,9 +11,6 @@
                 <div class="medium-2 cell">
                     <a href="/questionnaires/{{ $questionnaire->id}}/questions/create" class="button">Create New Question</a>
                 </div>
-                <div class="medium-8 cell">
-                    <a href="/questionnaires/{{ $questionnaire->id}}/edit" class="button">Edit Questionnaire</a>
-                </div>
                 <div class="medium-2 cell">
                     <a href="/surveys/{{ $questionnaire->id}}-{{ Str::slug($questionnaire->questionnaireTitle)}}" class="button">Complete a Survey</a>
                 </div>
@@ -39,13 +36,17 @@
                     </div>
                     
                     <div class="grid-x grid-padding-y">
-                        <div class="medium-6 cell">
+                        <div class="small-2 cell">
                             <form action="/questionnaires/{{ $questionnaire->id }}/questions/{{ $question->id }}" method="post">
                                 @method('DELETE')
                                 @csrf
 
                                 <button type="submit" class="alert button">Delete Question</button>
                             </form>
+                        </div>
+                    
+                        <div class="small-2 cell">
+                            <a href="/questionnaires/{{ $questionnaire->id}}/questions/{{ $question->id }}/edit" class="success button">Edit Questionnaire</a>
                         </div>
                     </div>
                 </div>

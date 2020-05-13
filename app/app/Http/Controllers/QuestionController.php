@@ -43,5 +43,29 @@ class QuestionController extends Controller
 
     }
 
+    public function edit($id)
+    {   
+
+        $question = question::find($id);
+        return view('question.edit', compact('question'));
+
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'question.question' => 'required',
+
+            'answers.*.answer' => 'required',
+        ]);
+
+        $question = question::find($id);
+        $question->question =  $request->get('question');
+        $question->answer = $request->get('answer');
+        $question->save();
+
+        return redirect('/questionnaires/'.$questionnaire->id);
+    }
+
 
 }

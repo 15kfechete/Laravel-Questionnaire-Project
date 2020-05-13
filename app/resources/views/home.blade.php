@@ -53,19 +53,10 @@
                     <a href="{{ $questionnaire->publicPath() }}" class="button">{{ $questionnaire->publicPath() }}}</a>
                 </div>
                 <div class="cell small-2">
-                    <form action="" method="post">
-                        @method('PATCH')
-                        @csrf
-                        <button type="submit" class="success button">Edit Questionnaire</button>
-                    </form>
+                        <a href="/questionnaires/{{ $questionnaire->id}}/edit" class="success button">Edit Questionnaire</a>
                 </div>
             </div>
-
-
-            
-                
-
-            </div>
+        </div>
     </div>
             @endforeach
 @endsection

@@ -42,21 +42,28 @@ class QuestionnaireController extends Controller
         return view('questionnaire.view', compact('questionnaire'));
     }
 
-    public function edit()
+    public function edit($id)
     {   
 
-        return view('questionnaire.edit');
+        $questionnaire = questionnaire::find($id);
+        return view('questionnaire.edit', compact('questionnaire'));
 
-        $data = request()->validate([
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
             'questionnaireTitle' => 'required',
 
             'agreementTerms' => 'required',
-            
         ]);
-    
-        $questionnaire = auth()->user()->questionnaire()->update($data);
 
-        return redirect('/questionnaires/'.$questionnaire->id);
+        $questionnaire = questionnaire::find($id);
+        $questionnaire->questionnaireTitle =  $request->get('questionnaireTitle');
+        $questionnaire->agreementTerms = $request->get('agreementTerms');
+        $questionnaire->save();
+
+        return redirect('/home');
     }
 
     public function destroy(questionnaire $questionnaire, question $question)
