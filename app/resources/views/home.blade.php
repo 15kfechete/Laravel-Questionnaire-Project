@@ -4,7 +4,7 @@
 
     <div class="card">
         <div class="card-divider">
-            Dashboard
+        <p class="lead">Dashboard</p>
         </div>
             <div class="card-section">
                 @if (session('status'))
