@@ -9,8 +9,6 @@ use Illuminate\Http\Request;
 
 class QuestionController extends Controller
 {
-
-
     public function create(questionnaire $questionnaire)
     {
         return view('question.create', compact('questionnaire'));
@@ -43,7 +41,7 @@ class QuestionController extends Controller
 
     }
 
-    public function edit($id)
+    public function edit(questionnaire $questionnaire, $id)
     {   
 
         $question = question::find($id);
@@ -51,7 +49,7 @@ class QuestionController extends Controller
 
     }
 
-    public function update(Request $request, $id)
+    public function update(questionnaire $questionnaire, Request $request, $id)
     {
         $request->validate([
             'question.question' => 'required',
@@ -66,6 +64,5 @@ class QuestionController extends Controller
 
         return redirect('/questionnaires/'.$questionnaire->id);
     }
-
 
 }

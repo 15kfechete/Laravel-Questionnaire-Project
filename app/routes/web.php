@@ -39,6 +39,9 @@ Route::patch('/questionnaires/{questionnaire}/questions/{question}', 'QuestionCo
 Route::get('/surveys/{questionnaire}-{slug}', 'SurveyController@show');
 Route::post('/surveys/{questionnaire}-{slug}', 'SurveyController@store');
 
+Route::get('/surveys/{questionnaire}-{slug}/farewell', 'FarewellController@show');
+
+
 
 
 

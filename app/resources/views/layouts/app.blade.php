@@ -29,7 +29,7 @@
                 <div class="top-bar">
                     <div class="top-bar-left">
                         <ul class="menu">
-                            <li class="menu-text">CIS2167 Coursework 2</li>
+                            <li class="menu-text"><a href="/">CIS2167 Coursework 2</a></li>
                         </ul>
                     </div>
                     <div class="top-bar-right">
@@ -69,7 +69,9 @@
         <div class="cell small-2">
         </div>
             <div class="cell small-8">
+
                 @yield('content')
+
             </div>
         </div>
     </div>

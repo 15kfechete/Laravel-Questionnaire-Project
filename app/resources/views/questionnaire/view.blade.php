@@ -8,11 +8,11 @@
     </div>
         <div class="card-section">
             <div class="grid-x grid-padding-x">
-                <div class="medium-2 cell">
+                <div class="medium-10 cell">
                     <a href="/questionnaires/{{ $questionnaire->id}}/questions/create" class="button">Create New Question</a>
                 </div>
                 <div class="medium-2 cell">
-                    <a href="/surveys/{{ $questionnaire->id}}-{{ Str::slug($questionnaire->questionnaireTitle)}}" class="button">Complete a Survey</a>
+                    <a href="/surveys/{{ $questionnaire->id}}-{{ Str::slug($questionnaire->questionnaireTitle)}}" class="button">Complete Survey</a>
                 </div>
             </div>
         </div>    
@@ -28,15 +28,16 @@
                 <div class="card-section">
                     <div class="grid-x grid-padding-y">
                         @foreach($question->answers as $answer)
-                        <div class="medium-11 cell"><p class="lead">{{ $answer->answer }}</p></div>
+                        <div class="medium-9 cell"><p class="lead">{{ $answer->answer }}</p></div>
                                 @if($question->responses->count())
+                        <div class="medium-2 cell"><p class="lead"> <strong>{{ intval(($answer->responses->count())) }}</strong>  Answered</p></div>
                         <div class="medium-1 cell"><p class="lead">% {{ intval(($answer->responses->count() * 100) / $question->responses->count()) }}</p></div>
                                 @endif
                         @endforeach
                     </div>
                     
                     <div class="grid-x grid-padding-y">
-                        <div class="small-2 cell">
+                        <div class="small-10 cell">
                             <form action="/questionnaires/{{ $questionnaire->id }}/questions/{{ $question->id }}" method="post">
                                 @method('DELETE')
                                 @csrf

@@ -16,7 +16,6 @@
                 <a href="/questionnaires/create" class="button">Create New Questionnaire</a>
             </div>
     </div>
-
             @foreach($questionnaires as $questionnaire)
     <div class="card">
         <div class="card-divider">
@@ -46,14 +45,14 @@
                 </div>
             </div>
             <div class="grid-x">
-                <div class="cell small-2">
-                    <a href="{{ $questionnaire->path() }}"><h3>{{ $questionnaire->questionnaireTitle }}</h3></a>
+                <div class="cell small-2">  
+                    <a href="{{ $questionnaire->path() }}" class="button">Access Questionnaire</a>
                 </div>
                 <div class="cell small-8">
-                    <a href="{{ $questionnaire->publicPath() }}" class="button">{{ $questionnaire->publicPath() }}}</a>
+                    <a href="{{ $questionnaire->publicPath() }}" class="button">Link: {{ $questionnaire->publicPath() }}</a>
                 </div>
                 <div class="cell small-2">
-                        <a href="/questionnaires/{{ $questionnaire->id}}/edit" class="success button">Edit Questionnaire</a>
+                    <a href="/questionnaires/{{ $questionnaire->id}}/edit" class="success button">Edit Questionnaire</a>
                 </div>
             </div>
         </div>
