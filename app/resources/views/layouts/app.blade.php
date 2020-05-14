@@ -66,9 +66,9 @@
             </div>
         </div>
         <div class="grid-x grid-padding-y">
-        <div class="cell small-2">
+        <div class="cell small-1">
         </div>
-            <div class="cell small-8">
+            <div class="cell small-10">
 
                 @yield('content')
 
