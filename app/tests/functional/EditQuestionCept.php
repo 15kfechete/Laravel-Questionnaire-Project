@@ -1,3 +1,27 @@
 <?php 
 $I = new FunctionalTester($scenario);
-$I->wantTo('perform actions and see result');
+
+$I->amLoggedAs(['email' => '15kfechete@gmail.com', 'password' => '12345678']);
+$I->wantTo('edit a question');
+
+$I->amOnPage('/home');
+$I->click('Edit Questionnaire');
+
+$I->amOnPage('/questionnaires/9/edit');
+$I->see('Create New Questionnaire');
+
+$I->see('Questionnaire Title');
+$I->fillField('questionnaireTitle','Example Title Amended');
+
+$I->see('Questionnaire Description and Terms');
+$I->fillField('agreementTerms','Example Agreement Amended');
+
+$I->click('Create Questionnaire');
+
+$I->amOnPage('/home');
+$I->see('Example Title Amended');
+$I->see('Example Agreement Amended');
+
+//Also
+$I->amOnPage('/questionnaires/9');
+$I->see('Example Title Amended');

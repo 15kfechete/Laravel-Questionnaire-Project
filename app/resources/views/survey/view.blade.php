@@ -47,7 +47,7 @@
                         </div>
 
                         <div class="medium-6 cell">
-                            <button class="button" type="submit">Create Questionnaire</button>
+                            <button class="button" type="submit">Submit Responses</button>
                         </div>
                     </div>
                 </div>

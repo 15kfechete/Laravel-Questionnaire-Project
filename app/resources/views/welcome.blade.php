@@ -1,23 +1,29 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Laravel</title>
+@section('content')
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <div class="card">
+        <div class="card-divider">
+        <p class="lead">Dashboard</p>
+        </div>
+            <div class="card-section">
+                @if (session('status'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
+                @endif
 
-        <!-- Styles -->
-        <link href="css/app.css" rel="stylesheet" type="text/css">
+                <div class="grid-x">
+                    <div class="cell small-2">
+                    <a href="/respondents" class="button">View Public Questionnaires</a>
+                    </div>
 
-    </head>
-    <body>
+                    <div class="cell small-2">
+                    <a href="/home" class="button">Access Questionnaires</a>
+                    </div>
+                </div>
 
-    
-
-
-    <script src="js/app.js"></script>
-    </body>
-</html>
+            </div>
+    </div>
+        
+@endsection

@@ -69,9 +69,7 @@
         <div class="cell small-1">
         </div>
             <div class="cell small-10">
-
                 @yield('content')
-
             </div>
         </div>
     </div>

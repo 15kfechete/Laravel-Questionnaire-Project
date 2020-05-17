@@ -12,13 +12,15 @@
 */
 
 
+Route::get('/', function () {
+    return view('welcome');
+});
 
+Route::get('/respondents', 'RespondendtsController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
-
-Route::get('/', 'HomeController@index')->name('home');
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware' => ['web']], function() {
 
 Route::get('/questionnaires/create', 'QuestionnaireController@create');
 Route::post('/questionnaires', 'QuestionnaireController@store');
@@ -35,15 +37,9 @@ Route::delete('/questionnaires/{questionnaire}/questions/{question}', 'QuestionC
 Route::get('/questionnaires/{questionnaire}/questions/{question}/edit', 'QuestionController@edit');
 Route::patch('/questionnaires/{questionnaire}/questions/{question}', 'QuestionController@update');
 
-
 Route::get('/surveys/{questionnaire}-{slug}', 'SurveyController@show');
 Route::post('/surveys/{questionnaire}-{slug}', 'SurveyController@store');
 
 Route::get('/surveys/{questionnaire}-{slug}/farewell', 'FarewellController@show');
 
-
-
-
-
-
-
+});

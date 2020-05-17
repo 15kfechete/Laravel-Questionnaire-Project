@@ -9,7 +9,7 @@ $I->click('Create New Question');
 
 $I->amOnPage('/questionnaires/9/questions/create');
 $I->see('Question Input');
-$I->fillField('question','Example');
+$I->fillField('question[question]','Example');
 
 $I->see('Choices');
 
@@ -37,8 +37,3 @@ $I->see('answer4');
 //Also
 $I->amOnPage('/questionnaires/9');
 $I->see('Example Title');
-
-
-
-
-
