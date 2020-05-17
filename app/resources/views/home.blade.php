@@ -1,7 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-
+    <? 
+        // The code section under the first 'card' div tag provides
+        // the user with a link to create a new questionnaire which
+        // will return the questionnaire.create view.
+    ?>
     <div class="card">
         <div class="card-divider">
         <p class="lead">Dashboard</p>
@@ -16,6 +20,17 @@
                 <a href="/questionnaires/create" class="button">Create New Questionnaire</a>
             </div>
     </div>
+
+    <? 
+        // The code section under the second 'card' div tag provides
+        // the user with a list of currenlty available Questionnaires
+        // that where previoulsy created by them. Each Questionnaire
+        // section provides the description of the terms and agreements,
+        // the Title of the Questonnaire, inlcuing links to: private access
+        // to the questionnaire to add additional questions, a link to
+        // the actual survey to be publicly completed, a link that deletes
+        // the survey and finally a link that edits the survey.
+    ?>
             @foreach($questionnaires as $questionnaire)
     <div class="card">
         <div class="card-divider">

@@ -2,6 +2,11 @@
 
 @section('content')
 
+    <? 
+        // This section exists so that each user must provide an integer ID
+        // as to confirm and output the results of the survey to the database.
+    ?>
+    
 <div class="card">
     <div class="card-divider">
     <p class="lead">{{ $questionnaire->questionnaireTitle }}</p>

@@ -2,10 +2,19 @@
 
 @section('content')
 
-
+<? 
+        // This section works under a form tag which will post the 
+        // results of the questionnaire once each field is completed.
+?>
 <form action="/surveys/{{ $questionnaire->id}}-{{ Str::slug($questionnaire->questionnaireTitle)}}" method="post">
 
     @csrf
+
+
+    <? 
+        // This section will output every question created for the
+        // Survey inlcuding a set of four answers for each question.
+    ?>
 
     @foreach($questionnaire->questions as $key => $question)
         <div class="card">
@@ -31,6 +40,10 @@
             </div>
     @endforeach
 
+    <? 
+        // This section exists so that each user must provide an integer ID
+        // as to confirm and output the results of the survey to the database.
+    ?>
         <div class="card">
             <div class="card-divider">
                 <p class="lead">Confirmation</p>
