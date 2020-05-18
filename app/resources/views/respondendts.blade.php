@@ -8,10 +8,10 @@
         // and Description, The Title and a link to the survey
     ?>
     
-            @foreach($questionnaires as $questionnaire)
+            @foreach($questionnaires as $questionnaire) <? // For Loop for Questionnaires ?>
     <div class="card">
         <div class="card-divider">
-            {{ $questionnaire->questionnaireTitle }}
+            {{ $questionnaire->questionnaireTitle }} <? // Calls Questionnaire Title ?>
         </div>
             <div class="card-section">
 
@@ -23,7 +23,7 @@
 
             <div class="grid-x">
                 <div class="cell small-12">
-                    <p>{{ $questionnaire->agreementTerms }}</P>
+                    <p>{{ $questionnaire->agreementTerms }}</P> <? // Calls the Questionnaire Agreements ?>
                 </div>
             </div>
 
@@ -34,6 +34,7 @@
             </div>
             <div class="grid-x">
                 <div class="cell small-8">
+                    <? // Link to Access Public Survey ?>
                     <a href="{{ $questionnaire->publicPath() }}" class="button">Link: {{ $questionnaire->publicPath() }}</a>
                 </div>
             </div>

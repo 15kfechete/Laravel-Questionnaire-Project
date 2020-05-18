@@ -11,6 +11,8 @@ class HomeController extends Controller
      *
      * @return void
      */
+
+    // Home constructor for auth middleware
     public function __construct()
     {
         $this->middleware('auth');
@@ -23,8 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
+        // Calls questionnaires through auth>users>questionnaire
         $questionnaires = auth()->user()->questionnaire;
-
+        // Returns homepage with compacted questionnaires
         return view('home', compact('questionnaires'));
     }
 }

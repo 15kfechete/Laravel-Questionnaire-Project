@@ -9,37 +9,48 @@
         <div class="card-section">
             <div class="medium-6 cell">
                 <label for="email">E-Mail Address
-                    <input id="email" type="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus> @error('email')
+                    <!-- Input for Email -->
+                    <input id="email" type="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                    <!-- Error message for not filling email field -->                   
+                    @error('email')
                     <span role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span> @enderror
+                        <strong>{{ $message }}</strong>
+                    </span> @enderror
                 </label>
 
             </div>
             <div class="medium-6 cell">
                 <label for="password">Password
-                    <input id="password" type="password" name="password" required autocomplete="current-password"> @error('password')
+                    <!-- Input for Password -->
+                    <input id="password" type="password" name="password" required autocomplete="current-password"> 
+                    
+                    <!-- Error message for not filling Password field -->                   
+                    @error('password')
                     <span role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span> @enderror
+                        <strong>{{ $message }}</strong>
+                    </span> @enderror
                 </label>
             </div>
 
             <div class="medium-6 cell">
                 <label for="remember">Remember Me
+                    <!-- Remember me checkbox -->
                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old( 'remember') ? 'checked' : '' }}>
                 </label>
             </div>
 
             <div class="medium-6 cell">
+                <!-- Login Button -->
                 <button type="submit" class="button">
                     Login
                 </button>
-
+                <!-- If statement for password -->                
                 @if (Route::has('password.request'))
-                <a class="button" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a> @endif
+                    <!-- Forgot you password button -->                
+                    <a class="button" href="{{ route('password.request') }}">
+                        { __('Forgot Your Password?') }}
+                    </a> 
+                @endif
             </div>
 </form>
 

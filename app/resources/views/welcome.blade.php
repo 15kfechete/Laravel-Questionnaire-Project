@@ -15,7 +15,7 @@
                         <p class="lead">Click here to gain access to the various tools and features included to create ad manage your own Questionnaires!</p>
                     </div>
                     <div class="cell small-2">
-                        <a href="/home" class="button">Access Questionnaires</a>
+                        <a href="/home" class="button">Access Questionnaires</a> <? // Link to Access Questionnaires ?>
                     </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@
                         <p class="lead">Click here to access all of the available questionnaires outputed by its various researchers!</p>
                     </div>
                     <div class="cell small-2">
-                        <a href="/respondents" class="button">View Public Questionnaires</a>
+                        <a href="/respondents" class="button">View Public Questionnaires</a> <? // Link to Public Questionnaires ?>
                     </div>
                 </div>
 

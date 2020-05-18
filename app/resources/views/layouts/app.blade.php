@@ -34,29 +34,35 @@
                     </div>
                     <div class="top-bar-right">
                         <ul class="menu">
+                            <!-- Guest only Section -->
                             @guest
                             <li>
+                            <!-- Login Link -->
                                 <a href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
+                            <!-- If statement for if Route has Register View -->
                             @if (Route::has('register'))
                             <li>
+                            <!-- Register Link -->
                                 <a href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
                             @endif @else
                             <li>
                                 <a>
+                                    <!-- Calls for the User's Name -->
                                     {{ Auth::user()->name }}
                                 </a>
                             <li>
 
                             <li>
+                                <!-- On Click even for Loging Out -->
                                 <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                                 </a>
                             </li>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
+                                @csrf <!-- Cross site Request -->
                                 </form>
 
                             @endguest

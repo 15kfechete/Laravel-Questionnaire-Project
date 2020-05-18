@@ -31,16 +31,16 @@
         // the actual survey to be publicly completed, a link that deletes
         // the survey and finally a link that edits the survey.
     ?>
-            @foreach($questionnaires as $questionnaire)
+            @foreach($questionnaires as $questionnaire) <? // For Loop for Questionnaires ?>
     <div class="card">
         <div class="card-divider">
-            {{ $questionnaire->questionnaireTitle }}
+            {{ $questionnaire->questionnaireTitle }} <? // Calls Questionnaire Title ?>
         </div>
             <div class="card-section">
 
             <div class="grid-x">
                 <div class="cell small-12">
-                    <p>{{ $questionnaire->agreementTerms }}</P>
+                    <p>{{ $questionnaire->agreementTerms }}</P> <? // Calls Agreement Terms?>
                 </div>
             </div>
 
@@ -52,21 +52,23 @@
                     <h3>Public</h3>
                 </div>
                 <div class="cell small-2">
-                    <form action="/questionnaires/{{ $questionnaire->id }}" method="post">
-                        @method('DELETE')
-                        @csrf
-                        <button type="submit" class="alert button">Delete Questionnaire</button>
+                    <form action="/questionnaires/{{ $questionnaire->id }}" method="post"> <? // Form that calls for the DELETE function?>
+                        @method('DELETE') <? // Replaces 'post' with DELETE method?>
+                        @csrf <? // Cross Site Request ?>
+                        <button type="submit" class="alert button">Delete Questionnaire</button> <? // Delete button removes Questionnaire?>
                     </form>
                 </div>
             </div>
             <div class="grid-x">
                 <div class="cell small-2">  
-                    <a href="{{ $questionnaire->path() }}" class="button">Access Questionnaire</a>
+                    <a href="{{ $questionnaire->path() }}" class="button">Access Questionnaire</a> <? // Link to Access the Specific Questionnaire?>
                 </div>
                 <div class="cell small-8">
+                <? // Link to Access the Specific Survey?>
                     <a href="{{ $questionnaire->publicPath() }}" class="button">Link: {{ $questionnaire->publicPath() }}</a>
                 </div>
                 <div class="cell small-2">
+                <? // Link to Edit the Specific Questionnaire?>
                     <a href="/questionnaires/{{ $questionnaire->id}}/edit" class="success button">Edit Questionnaire</a>
                 </div>
             </div>
