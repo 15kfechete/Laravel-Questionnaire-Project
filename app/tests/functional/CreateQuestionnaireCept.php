@@ -26,8 +26,3 @@ $I->see('Example Agreement');
 //Also
 $I->amOnPage('/questionnaires/9');
 $I->see('Example Title');
-
-
-
-
-

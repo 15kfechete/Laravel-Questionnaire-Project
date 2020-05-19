@@ -23,6 +23,8 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+    // Index Function
     public function index()
     {
         // Calls questionnaires through auth>users>questionnaire

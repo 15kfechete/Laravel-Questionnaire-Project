@@ -1,6 +1,6 @@
 <?php 
 $I = new FunctionalTester($scenario);
-$I->wantTo('test homepage working');
+$I->wantTo('test login is working');
 
 $I->amOnPage('/login');
 $I->seeInCurrentUrl('/login');

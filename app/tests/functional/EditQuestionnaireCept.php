@@ -8,7 +8,7 @@ $I->amOnPage('/home');
 $I->click('Edit Questionnaire');
 
 $I->amOnPage('/questionnaires/9/edit');
-$I->see('Create New Questionnaire');
+$I->see('Edit Questionnaire');
 
 $I->see('Questionnaire Title');
 $I->fillField('questionnaireTitle','Example Title Amended');
@@ -16,7 +16,7 @@ $I->fillField('questionnaireTitle','Example Title Amended');
 $I->see('Questionnaire Description and Terms');
 $I->fillField('agreementTerms','Example Agreement Amended');
 
-$I->click('Create Questionnaire');
+$I->click('Edit Questionnaire');
 
 $I->amOnPage('/home');
 $I->see('Example Title Amended');

@@ -7,6 +7,8 @@ $I->wantTo('delete a question');
 $I->amOnPage('/questionnaires/9');
 $I->click('Delete Question');
 
+$I->amOnPage('/questionnaires/9');
+
 $I->DontSee('Example');
 $I->DontSee('answer1');
 $I->DontSee('answer2');

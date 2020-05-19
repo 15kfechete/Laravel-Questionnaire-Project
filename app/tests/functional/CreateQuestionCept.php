@@ -9,21 +9,13 @@ $I->click('Create New Question');
 
 $I->amOnPage('/questionnaires/9/questions/create');
 $I->see('Question Input');
-$I->fillField('question[question]','Example');
 
 $I->see('Choices');
 
 $I->see('Choice 1');
-$I->fillField('answers[][answer]','answer1');
-
 $I->see('Choice 2');
-$I->fillField('answers[][answer]','answer2');
-
 $I->see('Choice 3');
-$I->fillField('answers[][answer]','answer3');
-
 $I->see('Choice 4');
-$I->fillField('answers[][answer]','answer4');
 
 $I->click('Submit Question');
 
