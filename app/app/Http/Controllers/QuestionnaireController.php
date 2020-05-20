@@ -53,7 +53,7 @@ class QuestionnaireController extends Controller
         return view('questionnaire.edit', compact('questionnaire'));
 
     }
-    // Upadte Function
+    // Update Function
     public function update(Request $request, $id)
     {
         // Validation for each field

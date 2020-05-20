@@ -14,14 +14,18 @@
             <div class="card-section">
                 <h1>Thank you for completing this survey!</h1>
                 <? // Link to Redirect to Welcome Page ?>
-                <a href="/"><h2>Click here to redirect</h1></a> 
+                <a href="/">
+                    <h2>Click here to redirect</h1>
+                </a>
 
                 <? // Link to Redirect to Respondents Page ?>
-                <a href="/respondents"><h2>Click here if you want to participate in more surveys</h1></a>
+                <a href="/respondents">
+                    <h2>Click here if you want to participate in more surveys</h1>
+                </a>
 
             </div>
         </div>
-    </div>    
+    </div>
 </div>
-            
+
 @endsection
